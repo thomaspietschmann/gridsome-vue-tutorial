@@ -1,29 +1,68 @@
 <template>
   <Layout>
+    <v-container>
+      <v-row>
+        <v-col sm="6" offset-sm="3">
+          <v-tabs v-model="tab" grow>
+            <v-tab>Item One</v-tab>
+            <v-tab>Item Two</v-tab>
+            <v-tab>Item Three</v-tab>
+          </v-tabs>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
+          <v-card class="mx-auto" max-width="344">
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              height="200px"
+            ></v-img>
 
-    <h1>Hello, world!</h1>
+            <v-card-title> Top western road trips </v-card-title>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
+            <v-card-actions>
+              <v-btn color="orange lighten-2" text> Explore </v-btn>
 
+              <v-spacer></v-spacer>
+
+              <v-btn icon @click="show = !show">
+                <v-icon>{{
+                  show ? "mdi-chevron-up" : "mdi-chevron-down"
+                }}</v-icon>
+              </v-btn>
+            </v-card-actions>
+
+            <v-expand-transition>
+              <div v-show="show">
+                <v-divider></v-divider>
+
+                <v-card-text>
+                  I'm a thing. But, like most politicians, he promised more than
+                  he could deliver. You won't have time for sleeping, soldier,
+                  not with all the bed making you'll be doing. Then we'll go
+                  with that data file! Hey, you add a one and two zeros to that
+                  or we walk! You're going to do his laundry? I've got to find a
+                  way to escape.
+                </v-card-text>
+              </div>
+            </v-expand-transition>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </Layout>
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+    title: "Hello, world!",
+  },
+  data() {
+    return {
+      tab: 0,
+    };
+  },
+};
 </script>
 
 <style>
